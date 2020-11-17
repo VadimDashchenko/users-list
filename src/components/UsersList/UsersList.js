@@ -1,14 +1,14 @@
 import React from 'react';
 
 const UsersList = (props) => {
-    const {users} = props;
+    const {items} = props;
     return(
         <>
-            {users.map(item => (
-                <div key={item.id}>
-                    <span>{item.name}</span>
-                    <span>{item.surname}</span>
-                    <p>{item.desc}</p>
+            {items.map(user => (
+                <div key={user.id}>
+                    <span>{user.name}</span>
+                    <span> {user.surname}</span>
+                    <p>{user.desc}</p>
                 </div>
             ))}
         </>
