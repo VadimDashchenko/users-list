@@ -21,8 +21,6 @@
     "dev": "node src/commons/server.js | react-scripts start",
     "dev:server": "node src/commons/server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
