@@ -1,0 +1,23 @@
+$red: #e51414;
+
+.pagination{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+
+  &__item{
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin: 4px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.active{
+  border-color: $red;
+  color: $red;
+}

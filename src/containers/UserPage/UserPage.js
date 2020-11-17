@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as userActions from '../../store/actions/users';
 import UsersList from "../../components/UsersList/UsersList";
 import Pagination from "../../components/Pagination/Pagination";
+import './styles.scss';
 
 class UserPage extends Component {
 
@@ -24,7 +25,7 @@ class UserPage extends Component {
             })
             .catch(error => console.log(error))
     }
-    
+
     changePage = (e) => {
         this.setState({
             currentPage: Number(e.target.id)
@@ -40,16 +41,16 @@ class UserPage extends Component {
         const indexOfFirstTodo = indexOfLastTodo - itemsOnPage;
         const currentUsers = users.slice(indexOfFirstTodo, indexOfLastTodo);
 
-        // Logic for displaying page numbers
+        // Logic for displaying page num
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(users.length / itemsOnPage); i++) {
             pageNumbers.push(i);
         }
         return (
-            <>
+            <div className="user-page">
                 <UsersList items={currentUsers}/>
-                <Pagination click={this.changePage} pages={pageNumbers}/>
-            </>
+                <Pagination click={this.changePage} pages={pageNumbers} current={currentPage}/>
+            </div>
         )
     }
 }
